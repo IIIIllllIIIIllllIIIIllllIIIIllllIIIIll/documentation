@@ -313,6 +313,11 @@ Prototype
     Returns a :ref:`hex string <hexstring>` of the *values* encoded as the *types*.
     If names is provided, *values* may contain named keys for tuples, otherwise
     each tuple expects an Array. Throws if a value is invalid for the type.
+    
+    Formally, this returns `enc((values[0], values[1] ... ))` where `enc` is this
+    `function <https://solidity.readthedocs.io/en/v0.4.25/abi-spec.html#formal-specification-of-the-encoding>`_
+    defined in the Solidity documentation, and where `values[i]` is an instance of  type 
+    `types[i]`.
 
 :sup:`prototype` . decode ( [ names , ] types , data )
     Returns an Object by parsing *data* assuming *types*, with each parameter

@@ -152,7 +152,7 @@ Prototype
     To change the provider, use the :ref:`connect <wallet-connect>` method, which will return
     a **new instance** of the Wallet connected to the provider.
 
-    
+
 
 :sup:`prototype` . mnemonic
     The mnemonic phrase for this wallet, or null if the mnemonic is unknown.
@@ -443,6 +443,9 @@ the following properties:
 
     If *message* is a string, it is converted to UTF-8 bytes, otherwise it is
     preserved as a binary representation of the :ref:`Arrayish <arrayish>` data.
+
+    Note that this function also does digest computation and hence appends a
+    prefix; to skip this, use the low-level SigningKey API instead.
 
 :sup:`object` . sendTransaction ( transaction ) |nbsp| :sup:`=>` |nbsp| :sup:`Promise<TransactionResponse>`
     Sends the *transaction* (see :ref:`Transaction Requests <transaction-request>`) to
